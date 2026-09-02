@@ -1,4 +1,6 @@
 label town_route_start:
+    stop music fadeout 0.8
+    stop ambience fadeout 0.8
     $ origin_route = "town"
     $ town_outfit = False
     $ town_permit = False
@@ -18,6 +20,7 @@ label town_route_start:
 
 label town_t01_tracks:
     scene town road day with Fade(0.8, 0.3, 1.0)
+    play ambience "audio/ambience/old_kingdom_road_wind.ogg" fadein 2.0 volume 0.16
     "我没有立刻走上公路。"
     "林缘还能替我遮住身形；一旦踏进开阔地，先开口的人便未必是我。"
     "断裂护栏外的泥土里留着三组新车辙。轮距接近，深浅不同，说明车队载重不一；最外侧还混着成排脚印。"
@@ -54,7 +57,7 @@ label town_t01_tracks:
 label town_t02_broken_axle:
     scene town cg axle
     with hpunch
-    play sound "audio/ui_ping.wav"
+    play sound "audio/sfx/wood_axle_crack.ogg" volume 0.78
     "木头裂开的声音比我预想得更脆。"
     "左轮突然外翻，车身向路肩倾斜。最上层货箱挣断绳结，直直滑向那个赤狐。"
     "我跨过护栏，双手抵住箱角，再用肩部顶住仍在下沉的车架。"
@@ -100,7 +103,7 @@ label town_t02_broken_axle:
 
 
 label town_t03_cover_and_clothes:
-    scene town road day with dissolve
+    scene town cg roadside_map with dissolve
     taosui "后车需要加固。衡叔的脚昨天扭了，今天少一个能稳车和搬货的人。"
     taosui "城门日落后关闭。我们没有时间回驿站找脚夫。"
     taosui "你从哪里来，我现在不问。你替我们把车送进灰桥，我给你饭、衣服和今天的工钱，再把名字写进雇签。"
@@ -116,24 +119,29 @@ label town_t03_cover_and_clothes:
     $ caravan_trust += 1
 
     window hide
+    play music "audio/music/greybridge_road_sample.mp3" fadein 2.5 volume 0.42
+    play sound "audio/sfx/map_unfold.ogg" volume 0.62
     scene town_map base with fade
     show town_paw pointer at town_paw_enter_city
+    play sound "audio/sfx/paw_map_tap.ogg" volume 0.48
     pause 0.7
     window show
     lan "先让你知道我们要去哪里。这里是灰桥城，荟屿国的首都。"
 
     show town_map route with Dissolve(0.8)
     show town_paw pointer at town_paw_to_road
+    play sound "audio/sfx/paw_map_tap.ogg" volume 0.45
     pause 0.9
     lan "我们现在在第 21 号王国公路上。沿这条旧路再走半日，就是西关道。"
 
     show town_paw pointer at town_paw_back_to_city
+    play sound "audio/sfx/paw_map_tap.ogg" volume 0.45
     pause 1.1
     lan "我们此行正是前往灰桥城进行贸易。眼下正值国王庆典，进城的货队比平日多一倍。"
     lan "庆典期间，验籍门会把临时雇工一个个核对。日落后，他们连争辩的机会都不给。"
     window hide
     hide town_paw pointer with dissolve
-    scene town road day with fade
+    scene town cg roadside_map with fade
     window show
 
     lan "你的口音像北边，但你没有行脚牌。最省事的说法是北岭旧道塌方，和同行者、行李、文书一起失散。"
@@ -300,9 +308,13 @@ label town_t05_gate:
     $ caravan_trust += 1
 
     scene town cg city with Fade(0.8, 0.3, 1.1)
+    play crowd "<from 2.0 to 8.5>audio/ambience/greybridge_gate_crowd_cc0.ogg" volume 0.16
     "穿过冷暗门洞的一瞬间，晚霞、灯火和几百种声音同时涌进视野。"
     "岚走出几步，又回头确认我是否跟上。陶穗已经领着货车进入外市的人流。"
     "我握紧刚盖过章的木牌。掌心能完全遮住它，可就是这样一件轻得几乎没有分量的东西，第一次让这个时代承认我暂时存在。"
+    stop ambience fadeout 1.5
+    stop music fadeout 2.0
+    stop crowd fadeout 0.8
     jump town_t06_south_yard
 
 

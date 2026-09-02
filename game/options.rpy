@@ -29,6 +29,7 @@ define config.game_menu_action = ShowMenu("pause_menu")
 init python:
     config.keymap["game_menu"] = ["K_ESCAPE", "K_MENU", "K_PAUSE", "mouseup_3"]
     renpy.music.register_channel("ambience", "sfx", loop=True)
+    renpy.music.register_channel("crowd", "sfx", loop=False)
     build.classify("design/**", None)
     build.classify("tests/**", None)
     build.classify("dist/**", None)
