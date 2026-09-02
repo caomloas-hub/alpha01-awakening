@@ -1,0 +1,32 @@
+# Ren'Py generated files
+*.rpyc
+*.rpymc
+game/cache/
+game/saves/
+
+# Build products
+dist/
+
+# Runtime and automated-test output
+log.txt
+errors.txt
+traceback.txt
+test-*.txt
+verify-*.txt
+tests/screenshots/
+tests/*.log
+tests/*-output.txt
+tests/*-errors.txt
+
+# Superseded and rejected art retained only in the local working copy
+design/archive-v1-assets/
+design/town-route-assets/_rejected/
+design/town-route-assets/cg/
+design/town-route-assets/map/
+design/town-route-assets/ui/
+
+# Editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
