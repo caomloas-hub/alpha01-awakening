@@ -38,6 +38,10 @@
 
 3. 开发检查可依次运行 `lint` 与 `compile`。构建产物不会提交到仓库。
 
+## Android 测试版
+
+Android 测试构建使用 Ren'Py 8.5.3 对应的 RAPT、JDK 21 与 Android API 36，包名为 `com.caomloas.alpha01awakening`，采用横屏显示且不启用商店内购。构建环境、真机部署和签名注意事项见 [Android 测试构建说明](docs/ANDROID_TEST_BUILD.md)。APK 作为测试发行附件提供，不把签名密钥或本机 SDK 路径提交到仓库。
+
 ## 路线状态
 
 序章内部记录 `resolve`、`caution`、`empathy`、`tech_insight` 与记忆碎片。城镇线额外记录商队信任、岚的关系、掩护说法、工作选择、临时准入证明与床位。离线核心和原型体记录继续保留，作为后续章节的回响，不再代替地表出身路线选择。
