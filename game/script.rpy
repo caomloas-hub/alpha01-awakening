@@ -1,9 +1,9 @@
-define judge = Character("审判长", color="#d6c1a7")
-define prosecutor = Character("公诉人", color="#c0c8d0")
-define researcher = Character("研究员", color="#b9eaff")
-define system = Character("设施系统", color="#ff7770")
-define unknown = Character("？？？", color="#aeb7bf")
-define ao = DynamicCharacter("player_name", color="#58dcff")
+define judge = Character("审判长", color="#d6c1a7", ctc=ctc_paw, ctc_position="fixed")
+define prosecutor = Character("公诉人", color="#c0c8d0", ctc=ctc_paw, ctc_position="fixed")
+define researcher = Character("研究员", color="#b9eaff", ctc=ctc_paw, ctc_position="fixed")
+define system = Character("设施系统", color="#ff7770", ctc=ctc_paw, ctc_position="fixed")
+define unknown = Character("？？？", color="#aeb7bf", ctc=ctc_paw, ctc_position="fixed")
+define ao = DynamicCharacter("player_name", color="#58dcff", ctc=ctc_paw, ctc_position="fixed")
 
 default player_name = "ALPHA-01"
 default court_response = ""
