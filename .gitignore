@@ -7,6 +7,11 @@ game/saves/
 # Build products
 dist/
 
+# Android local signing and machine-specific files
+*.keystore
+*.jks
+local.properties
+
 # Runtime and automated-test output
 log.txt
 errors.txt
