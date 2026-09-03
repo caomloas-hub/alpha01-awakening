@@ -8,7 +8,7 @@
     "include_sqlite": false,
     "layout": null,
     "name": "ALPHA-01\uff1a\u82cf\u9192\u8bb0\u5f55",
-    "numeric_version": 2,
+    "numeric_version": 3,
     "orientation": "sensorLandscape",
     "package": "com.caomloas.alpha01awakening",
     "permissions": [
@@ -20,5 +20,5 @@
     "update_always": true,
     "update_icons": true,
     "update_keystores": true,
-    "version": "0.2.0"
+    "version": "0.2.1"
 }
