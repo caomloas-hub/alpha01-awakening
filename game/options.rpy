@@ -1,8 +1,8 @@
 define config.name = _("ALPHA-01：苏醒记录")
 define gui.show_name = True
-define config.version = "0.2.0"
+define config.version = "0.2.1"
 define build.name = "alpha01_awakening_town_route_v020"
-define config.window_title = "ALPHA-01：苏醒记录 v0.2.0"
+define config.window_title = "ALPHA-01：苏醒记录 v0.2.1"
 
 define config.has_sound = True
 define config.has_music = True

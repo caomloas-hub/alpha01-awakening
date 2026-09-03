@@ -137,7 +137,7 @@ define gui.dialogue_xpos = 340
 define gui.dialogue_ypos = 76
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1260
+define gui.dialogue_width = 1160
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -433,8 +433,8 @@ init python:
 
         ## Adjust the location of the textbox.
         gui.textbox_height = 240
-        gui.name_xpos = 80
-        gui.dialogue_xpos = 90
+        gui.name_xpos = 340
+        gui.dialogue_xpos = 350
         gui.dialogue_width = 1100
 
         ## Change the size and spacing of items in the game menu.

@@ -1,8 +1,8 @@
-define lan = Character("岚", color="#e89755")
-define taosui = Character("陶穗", color="#c7a071")
-define heng = Character("衡叔", color="#b9a58f")
-define wence = Character("闻策", color="#91a9bf")
-define mei = Character("梅婶", color="#c4b29a")
+define lan = Character("岚", color="#e89755", ctc=ctc_paw, ctc_position="fixed")
+define taosui = Character("陶穗", color="#c7a071", ctc=ctc_paw, ctc_position="fixed")
+define heng = Character("衡叔", color="#b9a58f", ctc=ctc_paw, ctc_position="fixed")
+define wence = Character("闻策", color="#91a9bf", ctc=ctc_paw, ctc_position="fixed")
+define mei = Character("梅婶", color="#c4b29a", ctc=ctc_paw, ctc_position="fixed")
 
 default origin_route = ""
 default town_outfit = False
