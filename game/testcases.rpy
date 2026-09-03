@@ -18,7 +18,7 @@ testcase argue_technology_route:
     advance until screen "choice"
     $ assert tech_insight >= 2 and inspected_prototypes
     click "带走设施离线核心"
-    advance until screen "choice"
+    advance until screen "origin_route_choice"
     click "走向乡间小道"
     advance until screen "main_menu"
     $ assert persistent.prologue_cleared and persistent.unlocked_core_route
@@ -46,8 +46,9 @@ testcase silent_observer_route:
     click "不在未知环境中启动义体"
     advance until screen "choice"
     click "先观察通往王国的道路"
-    advance until screen "choice"
-    click "向远处的建筑物探索"
+    advance until screen "origin_route_choice"
+    $ origin_route = "wanderer"
+    run Jump("wanderer_route_preview")
     advance until screen "main_menu"
     $ assert persistent.last_court_response == "silent"
     $ assert persistent.last_caution >= 3
@@ -73,7 +74,7 @@ testcase prototype_memorial_route:
     click "不在未知环境中启动义体"
     advance until screen "choice"
     click "在出口为其他原型体留下标记"
-    advance until screen "choice"
+    advance until screen "origin_route_choice"
     click "走向乡间小道"
     advance until screen "main_menu"
     $ assert persistent.last_surface_plan == "memorial"
@@ -107,6 +108,21 @@ testcase escape_pause_and_secondary_menu:
     advance until screen "pause_menu"
     click "继续游戏"
     advance until screen "choice"
+
+
+testcase origin_hidden_wanderer_route:
+    $ _test.timeout = 30.0
+    $ _test.transition_timeout = 0.08
+
+    run Jump("origin_route_select")
+    advance until screen "origin_route_choice"
+    $ assert not _origin_wanderer_revealed
+    run Return("waited")
+    advance until screen "origin_route_choice"
+    $ assert _origin_wanderer_revealed
+    click "向远处的建筑物探索"
+    advance until screen "main_menu"
+    $ assert persistent.last_origin_route == "wanderer_preview"
 
 
 testcase town_minimal_road_route:
