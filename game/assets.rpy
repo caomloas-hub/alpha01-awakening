@@ -1,4 +1,4 @@
-image bg defendant = Transform("images/backgrounds/cg-defendant-nameplate.png", xysize=(1920, 1080))
+image bg defendant = Transform("images/backgrounds/cg-defendant-nameplate-v2.png", xysize=(1920, 1080))
 image bg laboratory = Transform("images/backgrounds/bg-alpha-laboratory.png", xysize=(1920, 1080))
 image bg control room = Transform("images/backgrounds/bg-abandoned-control-room-v2.png", xysize=(1920, 1080))
 image bg medical storage = Transform("images/backgrounds/bg-abandoned-medical-storage-v2.png", xysize=(1920, 1080))
@@ -16,16 +16,6 @@ transform soft_shake:
     linear 0.04 xoffset -5
     linear 0.05 xoffset 4
     linear 0.04 xoffset 0
-
-screen defendant_plaque_overlay():
-    zorder 20
-    text "被告人":
-        xalign 0.5
-        yalign 0.585
-        size 68
-        color "#24170f"
-        outlines [(1, "#8b7353aa", 0, 1)]
-        kerning 10
 
 screen facility_warning_overlay():
     zorder 25

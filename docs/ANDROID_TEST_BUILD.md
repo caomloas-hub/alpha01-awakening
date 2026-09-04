@@ -14,10 +14,10 @@
 
 ## 本地构建
 
-将 RAPT 安装到 Ren'Py SDK 后，为 RAPT 指定本机 Android SDK，并确保 `JAVA_HOME` 指向 JDK 21。然后运行：
+将 RAPT 安装到 Ren'Py SDK 后，为 RAPT 指定本机 Android SDK，并确保 `JAVA_HOME` 指向 JDK 21。Ren'Py 8.5.3 会在构建前校验 Java 主版本，JDK 17 无法通过这一检查。然后运行：
 
 ```text
-renpy launcher android_build <项目目录> --destination <输出目录>
+renpy <Ren'Py SDK 内的 launcher 目录> android_build <项目目录> --destination <输出目录>
 ```
 
 需要直接部署到已连接设备时，可追加 `--install --launch`。
