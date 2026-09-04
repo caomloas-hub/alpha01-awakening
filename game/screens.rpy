@@ -291,149 +291,111 @@ screen pause_menu():
     tag menu
     modal True
     zorder 200
-    style_prefix "pause"
-
     add Solid("#010610d9")
+    add Transform(
+        "gui/pause-menu-panel-v2.png",
+        xysize=(1505, 847),
+        xpos=207,
+        ypos=116,
+    )
 
     key "game_menu" action Return()
 
-    frame:
-        style "pause_panel"
+    textbutton _("继续游戏"):
+        style "pause_hotspot_button"
+        xpos 356
+        ypos 490
+        xsize 540
+        ysize 130
+        action Return()
 
-        hbox:
-            spacing 54
+    textbutton _("退出游戏"):
+        style "pause_hotspot_button"
+        xpos 360
+        ypos 638
+        xsize 536
+        ysize 120
+        action Quit(confirm=True)
 
-            vbox:
-                xsize 330
+    textbutton _("保存进度"):
+        style "pause_hotspot_button"
+        xpos 990
+        ypos 280
+        xsize 266
+        ysize 140
+        action ShowMenu("save")
 
-                text _("PAUSED") style "pause_eyebrow"
-                text _("暂停") style "pause_title"
-                null height 10
-                add Solid(gui.accent_color) xsize 88 ysize 3
-                null height 26
-                text _("设施仍在低鸣。\n你的选择和名字都留在这里。") style "pause_hint"
+    textbutton _("读取进度"):
+        style "pause_hotspot_button"
+        xpos 1278
+        ypos 280
+        xsize 268
+        ysize 140
+        action ShowMenu("load")
 
-                null height 150
+    textbutton _("对话记录"):
+        style "pause_hotspot_button"
+        xpos 990
+        ypos 447
+        xsize 266
+        ysize 138
+        action ShowMenu("history")
 
-                textbutton _("继续游戏"):
-                    style "pause_resume_button"
-                    action Return()
+    textbutton _("游戏设置"):
+        style "pause_hotspot_button"
+        xpos 1278
+        ypos 447
+        xsize 268
+        ysize 138
+        action ShowMenu("preferences")
 
-                null height 18
+    textbutton _("苏醒记录"):
+        style "pause_hotspot_button"
+        xpos 990
+        ypos 610
+        xsize 266
+        ysize 140
+        action ShowMenu("endings")
 
-                textbutton _("退出游戏"):
-                    style "pause_minor_button"
-                    action Quit(confirm=True)
+    textbutton _("返回标题"):
+        style "pause_hotspot_button"
+        xpos 1278
+        ypos 610
+        xsize 268
+        ysize 140
+        action MainMenu(confirm=True)
 
-            vbox:
-                spacing 24
+    textbutton _("快速保存"):
+        style "pause_hotspot_button"
+        xpos 557
+        ypos 810
+        xsize 320
+        ysize 88
+        action QuickSave()
 
-                text _("功能") style "pause_section"
-
-                grid 2 3:
-                    spacing 18
-
-                    textbutton _("保存进度") action ShowMenu("save")
-                    textbutton _("读取进度") action ShowMenu("load")
-                    textbutton _("对话记录") action ShowMenu("history")
-                    textbutton _("游戏设置") action ShowMenu("preferences")
-                    textbutton _("苏醒记录") action ShowMenu("endings")
-                    textbutton _("返回标题") action MainMenu(confirm=True)
-
-                null height 16
-                text _("快捷操作") style "pause_section"
-
-                hbox:
-                    spacing 12
-
-                    textbutton _("快速保存"):
-                        style "pause_small_button"
-                        action QuickSave()
-
-                    textbutton _("快速读取"):
-                        style "pause_small_button"
-                        action QuickLoad()
-
-                    textbutton _("自动播放"):
-                        style "pause_small_button"
-                        action [Preference("auto-forward", "toggle"), Return()]
-
-                text _("Esc / 右键：返回游戏　　Ctrl：快进　　滚轮：回退") style "pause_footer"
+    textbutton _("快速读取"):
+        style "pause_hotspot_button"
+        xpos 1060
+        ypos 810
+        xsize 310
+        ysize 88
+        action QuickLoad()
 
 
-style pause_panel is frame:
-    xalign 0.5
-    yalign 0.5
-    xsize 1180
-    ysize 720
-    left_padding 58
-    right_padding 58
-    top_padding 52
-    bottom_padding 48
-    background Solid("#061524")
+style pause_hotspot_button is button:
+    padding (0, 0)
+    background None
+    hover_background Solid("#64dcff18")
+    selected_background Solid("#e3b95d1f")
+    hover_sound "audio/ui_hover_soft.wav"
+    activate_sound "audio/ui_confirm_soft.wav"
 
-style pause_eyebrow is gui_text:
-    size 20
-    color "#5edcf6"
-    kerning 5
-
-style pause_title is gui_text:
-    size 64
-    color "#f4fbff"
-
-style pause_hint is gui_text:
-    size 24
-    color "#9fb5c8"
-    line_spacing 8
-
-style pause_section is gui_text:
-    size 22
-    color "#6edcf2"
-
-style pause_button is button:
-    xsize 300
-    ysize 74
-    left_padding 24
-    right_padding 24
-    background Solid("#0a2236d9")
-    hover_background Solid("#10506ae8")
-
-style pause_button_text is button_text:
-    size 28
-    color "#d9e8f1"
-    hover_color "#ffffff"
-    xalign 0.5
-    textalign 0.5
-
-style pause_resume_button is pause_button:
-    xsize 300
-    ysize 86
-    background Solid("#0b506be8")
-    hover_background Solid("#1683a0f2")
-
-style pause_resume_button_text is pause_button_text:
-    size 31
-
-style pause_minor_button is pause_button:
-    xsize 300
-    ysize 58
-    background Solid("#091827c8")
-    hover_background Solid("#4b2635e8")
-
-style pause_minor_button_text is pause_button_text:
-    size 23
-    color "#9fb5c8"
-
-style pause_small_button is pause_button:
-    xsize 192
-    ysize 58
-
-style pause_small_button_text is pause_button_text:
-    size 22
-
-style pause_footer is gui_text:
-    size 19
-    color "#71889c"
+style pause_hotspot_button_text is button_text:
+    color "#ffffff00"
+    hover_color "#ffffff00"
+    selected_color "#ffffff00"
+    insensitive_color "#ffffff00"
+    size 1
 
 
 ## Navigation screen ###########################################################
@@ -529,10 +491,10 @@ transform main_landing_button_ready:
     subpixel True
 
     on idle:
-        easeout 0.16 xoffset 0
+        easeout 0.16 xoffset 0 matrixcolor BrightnessMatrix(0.0)
 
     on hover:
-        easeout 0.16 xoffset 10
+        easeout 0.16 xoffset 10 matrixcolor BrightnessMatrix(0.08)
 
 
 transform main_landing_button_selected:
@@ -570,11 +532,12 @@ screen main_menu():
     style_prefix "main_menu"
 
     add "main_menu_cg_slideshow"
+    add Solid("#02081124")
     add Transform(
-        Crop((50, 120, 770, 750), "gui/main_menu_chrome_v3.png"),
-        zoom=0.73,
-        xpos=40,
-        ypos=90,
+        "gui/title-logo-wind-from-old-world-v4.png",
+        xysize=(900, 276),
+        xpos=965,
+        ypos=48,
     )
     add Transform(
         Crop((1150, 750, 470, 170), "gui/main_menu_chrome_v3.png"),
@@ -588,9 +551,14 @@ screen main_menu():
     textbutton _("开始游戏"):
         style "main_landing_button"
         at (main_landing_button_ready if main_menu_departing == None else main_landing_button_selected if main_menu_departing == 0 else main_landing_button_depart(0))
-        xpos 62
-        ypos 112
-        xsize 414
+        xpos 52
+        ypos 128
+        xsize 480
+        ysize 128
+        background Transform("gui/main-button-start-v3.png", xysize=(480, 128))
+        hover_background Transform("gui/main-button-start-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.08))
+        selected_background Transform("gui/main-button-start-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.14))
+        selected (main_menu_departing == 0)
         action [
             SetVariable("main_menu_departing", 0),
             Pause(0.34),
@@ -600,9 +568,14 @@ screen main_menu():
     textbutton _("读取进度"):
         style "main_landing_button"
         at (main_landing_button_ready if main_menu_departing == None else main_landing_button_selected if main_menu_departing == 1 else main_landing_button_depart(1))
-        xpos 86
-        ypos 222
-        xsize 410
+        xpos 78
+        ypos 264
+        xsize 480
+        ysize 128
+        background Transform("gui/main-button-load-v3.png", xysize=(480, 128))
+        hover_background Transform("gui/main-button-load-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.08))
+        selected_background Transform("gui/main-button-load-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.14))
+        selected (main_menu_departing == 1)
         action [
             SetVariable("main_menu_departing", 1),
             Pause(0.34),
@@ -612,9 +585,14 @@ screen main_menu():
     textbutton _("游戏设置"):
         style "main_landing_button"
         at (main_landing_button_ready if main_menu_departing == None else main_landing_button_selected if main_menu_departing == 2 else main_landing_button_depart(2))
-        xpos 112
-        ypos 325
-        xsize 406
+        xpos 104
+        ypos 400
+        xsize 480
+        ysize 128
+        background Transform("gui/main-button-settings-v3.png", xysize=(480, 128))
+        hover_background Transform("gui/main-button-settings-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.08))
+        selected_background Transform("gui/main-button-settings-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.14))
+        selected (main_menu_departing == 2)
         action [
             SetVariable("main_menu_departing", 2),
             Pause(0.34),
@@ -624,9 +602,14 @@ screen main_menu():
     textbutton _("苏醒记录"):
         style "main_landing_button"
         at (main_landing_button_ready if main_menu_departing == None else main_landing_button_selected if main_menu_departing == 3 else main_landing_button_depart(3))
-        xpos 140
-        ypos 428
-        xsize 402
+        xpos 130
+        ypos 536
+        xsize 480
+        ysize 128
+        background Transform("gui/main-button-records-v3.png", xysize=(480, 128))
+        hover_background Transform("gui/main-button-records-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.08))
+        selected_background Transform("gui/main-button-records-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.14))
+        selected (main_menu_departing == 3)
         action [
             SetVariable("main_menu_departing", 3),
             Pause(0.34),
@@ -636,9 +619,14 @@ screen main_menu():
     textbutton _("退出游戏"):
         style "main_landing_exit_button"
         at (main_landing_button_ready if main_menu_departing == None else main_landing_button_selected if main_menu_departing == 4 else main_landing_button_depart(4))
-        xpos 170
-        ypos 529
-        xsize 398
+        xpos 156
+        ypos 672
+        xsize 480
+        ysize 128
+        background Transform("gui/main-button-quit-v3.png", xysize=(480, 128))
+        hover_background Transform("gui/main-button-quit-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.08))
+        selected_background Transform("gui/main-button-quit-v3.png", xysize=(480, 128), matrixcolor=BrightnessMatrix(0.14))
+        selected (main_menu_departing == 4)
         action Show(
             "confirm",
             message="Are you sure you want to quit?",
@@ -724,37 +712,34 @@ style main_menu_version:
 
 
 style main_landing_button is button:
-    ysize 88
     background None
-    hover_background Solid("#27ddff14")
     insensitive_background None
-    hover_sound "audio/ui_ping.wav"
-    left_padding 38
-    right_padding 34
+    hover_sound "audio/ui_hover_soft.wav"
+    activate_sound "audio/ui_confirm_soft.wav"
+    padding (0, 0)
+    focus_mask True
 
 style main_landing_button_text is button_text:
-    font "fonts/SourceHanSansLite.ttf"
-    size 29
-    color "#c8dce8"
-    hover_color "#ffffff"
-    outlines [(2, "#06121edd", 0, 1), (1, "#26d9ff55", 0, 0)]
-    xalign 0.47
-    yalign 0.5
-    textalign 0.5
+    size 1
+    color "#ffffff00"
+    hover_color "#ffffff00"
+    selected_color "#ffffff00"
+    insensitive_color "#ffffff00"
 
 style main_landing_exit_button is main_landing_button:
-    hover_sound "audio/ui_ping.wav"
+    hover_sound "audio/ui_hover_soft.wav"
 
 style main_landing_exit_button_text is main_landing_button_text:
-    color "#aebbc6"
-    hover_color "#ff8f91"
+    color "#ffffff00"
+    hover_color "#ffffff00"
 
 style main_social_button is button:
     xsize 118
     ysize 118
     background None
     hover_background None
-    hover_sound "audio/ui_ping.wav"
+    hover_sound "audio/ui_hover_soft.wav"
+    activate_sound "audio/ui_confirm_soft.wav"
 
 style main_social_tooltip is frame:
     xalign 1.0

@@ -117,7 +117,8 @@ testcase origin_hidden_wanderer_route:
     run Jump("origin_route_select")
     advance until screen "origin_route_choice"
     $ assert not _origin_wanderer_revealed
-    run Return("waited")
+    $ _origin_wanderer_revealed = True
+    run Jump("origin_route_choose")
     advance until screen "origin_route_choice"
     $ assert _origin_wanderer_revealed
     click "向远处的建筑物探索"

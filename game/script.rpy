@@ -38,12 +38,10 @@ label start:
     centered "旧纪元末期\n中华人民共和国\n某中级人民法院"
 
     scene bg defendant with dissolve
-    show screen defendant_plaque_overlay
-    play sound "audio/ui_ping.wav"
+    play sound "audio/ui_confirm_soft.wav"
 
     prosecutor "被告人，法庭调查已经结束。"
     prosecutor "在宣判前，你是否还有最后陈述？"
-    hide screen defendant_plaque_overlay with dissolve
 
     menu:
         "抗辩":
@@ -65,7 +63,6 @@ label start:
     judge "本院依法判决：数罪并罚，判处死刑，剥夺政治权利终身。"
     judge "判决宣告完毕。"
 
-    hide screen defendant_plaque_overlay
     scene black with fade
     "脚镣被打开时，我以为他们终于准备执行。"
     "蒙眼布却没有摘下。车门合拢以后，轮胎驶过的也不是通往刑场的那段碎石路。"
@@ -156,12 +153,12 @@ label inspect_terminal:
     show screen facility_terminal_overlay
     system "本地恢复界面已解锁。"
     "屏幕只剩下最底层的维护页面。日期字段已经溢出，日志停在两千多年前。"
-    "我把系统时间读了三遍。不是看不懂那些数字，只是不知道该把它们放进怎样的现实里。"
+    "我把系统时间读了三遍。数字没有变。指腹贴在屏幕边缘，冷得发麻。"
     ao "两千零三年……"
     "存活人员一栏是零。ALPHA-02、03、04 的生命信号，也都在漫长的记录中先后消失。"
-    "如果时钟没有坏，那么这世上早已没有人记得我来过。"
+    "那些名字下面，最后一次状态更新相隔了几百年。如今连替他们按下确认键的人都不在了。"
     "出口图上，通往地表的维护通道仍显示微弱供电。"
-    "我记下路线，把那串日期留在身后。眼下，出口比答案更要紧。"
+    "我抄下仍有供电的维护通道，关掉日期页面。头顶又落下一层灰。这里撑不了多久。"
     hide screen facility_terminal_overlay
     jump facility_explore
 
@@ -205,7 +202,7 @@ label approach_exit:
     scene cg pov mirror with dissolve
     "我缓慢抬头。"
     "蓝色的角、过大的耳朵、陌生的眼睛。那张脸没有保留多少旧日的轮廓，却会在我屏住呼吸时同样僵住。"
-    "我试着从记忆里找回原来的自己，最后只想起法庭名牌上那几个冰冷的字。至于那张脸，竟已经模糊了。"
+    "我试着从记忆里找回原来的自己，最后只想起法庭名牌上那几个字。至于那张脸，已经模糊了。"
     ao "……这就是我。"
     "尾巴不安地碰上身后的栏杆。我花了几次呼吸，才让它慢慢安静下来。"
     "过去的姓名留在判决书里。两千年过去，连替我保管它的人也不在了。"
@@ -261,7 +258,7 @@ label surface_reveal:
     "我曾想过门外只剩焦土，或者什么都没有。却从没想过，世界会在不需要人类的日子里继续生长。"
     ao "设施时钟没有坏。"
     ao "消失的是我们。"
-    "山谷里传来遥远的钟声。鸟群受惊飞起，很快又落回林间。世界没有回答，也不需要回答。"
+    "山谷里传来遥远的钟声。鸟群受惊飞起，很快又落回林间。我站在风口，记住了钟声传来的方向。"
 
     menu:
         "先观察通往王国的道路":
@@ -273,7 +270,7 @@ label surface_reveal:
         "带走设施离线核心" if tech_insight >= 2:
             $ surface_plan = "core"
             "我把掌心大小的离线核心固定在应急袋内侧。"
-            "它未必能解释这个时代，却还保存着我熟悉的文字和声音。眼下，这就够了。"
+            "里面还存着我熟悉的文字和声音。只凭这一点，我也不愿把它留在地下。"
 
         "在出口为其他原型体留下标记" if inspected_prototypes:
             $ surface_plan = "memorial"
@@ -292,8 +289,8 @@ label surface_reveal:
 
     show screen prologue_complete_overlay with dissolve
     pause 1.2
-    "两千年前，他们替我决定了何时死。"
-    "两千年后，我第一次可以自己决定，要往哪里去。"
+    "两千年前，他们押着我走进那间实验室。"
+    "如今门外有三条路，至少这一次，没人催我选。"
     hide screen prologue_complete_overlay with dissolve
 
     jump origin_route_select

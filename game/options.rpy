@@ -1,13 +1,13 @@
-define config.name = _("ALPHA-01：苏醒记录")
+define config.name = _("风从旧世来")
 define gui.show_name = True
-define config.version = "0.2.1"
-define build.name = "alpha01_awakening_town_route_v020"
-define config.window_title = "ALPHA-01：苏醒记录 v0.2.1"
+define config.version = "0.2.2"
+define build.name = "wind_from_old_world_v022"
+define config.window_title = "风从旧世来 v0.2.2"
 
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = False
-define config.sample_sound = "audio/ui_ping.wav"
+define config.sample_sound = "audio/ui_confirm_soft.wav"
 
 define config.enter_transition = dissolve
 define config.exit_transition = dissolve

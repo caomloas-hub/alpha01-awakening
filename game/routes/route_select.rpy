@@ -47,7 +47,8 @@ label origin_route_select:
     ao "乡间小道钻进林带。枝叶遮住了尽头，泥地上还留着新鲜的足迹。"
 
     scene bg surface with dissolve
-    ao "我现在需要的不是最安全的答案，而是一条能够继续活下去的路。"
+    ao "三条路都看不见尽头。"
+    "我检查了一遍应急袋，站起身。总得先走出去。"
 
     $ _origin_wanderer_revealed = False
 
