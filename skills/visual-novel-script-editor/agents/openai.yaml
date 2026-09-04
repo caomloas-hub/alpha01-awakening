@@ -1,0 +1,4 @@
+interface:
+  display_name: "视觉小说剧本调写"
+  short_description: "保留分支逻辑，改善人物声线、情绪节奏与整体制作连续性"
+  default_prompt: "Use $visual-novel-script-editor to review and rewrite this visual-novel script while preserving its plot, branch logic, and production continuity."

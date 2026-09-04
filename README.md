@@ -64,6 +64,11 @@ Android 测试构建使用 Ren'Py 8.5.3 对应的 RAPT、JDK 21 与 Android API 
 
 本公示用于如实说明制作流程，不代表仓库内素材自动获得开放授权；具体使用边界仍以本 README、后续许可证及第三方素材记录为准。
 
+## 开发复盘与项目 Skill
+
+- [v0.2.2 开发实战复盘](docs/DEVELOPMENT_RETROSPECTIVE_V022.md)记录了本轮界面、剧本、美术、声音、测试和 Android 汇编中真正影响后续决策的经验。
+- [视觉小说剧本调写 Skill](skills/visual-novel-script-editor/SKILL.md)将这些经验整理为可复用规则；涉及美术、UI、声音或 Ren'Py 接入时，再按需读取配套的制作连续性参考。
+
 ## 仓库范围与授权
 
 - 仓库保留可运行源代码、游戏实际使用的素材、NPC 设定参考和必要设计文档。
