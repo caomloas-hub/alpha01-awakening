@@ -17,6 +17,10 @@ Read the surrounding exchange and relevant branch conditions before diagnosing a
 
 Before replacing an abstract line with concrete detail, check what the detail asserts. Falling masonry adds danger; a remembered night outside a gate adds biography; a gesture can imply trust the scene has not earned. Prefer established objects and actions, and flag additions that change causality or characterization.
 
+The severity of a problem does not grant a wider edit scope. Separate a factual/branch contradiction from an awkward sentence and from a matter of taste. For Chinese line editing, read [chinese-revision.md](references/chinese-revision.md); for multi-scene or converging-route work, read [route-continuity.md](references/route-continuity.md). These are editing aids, not mandatory reports for every line.
+
+When incorporating author feedback or approved passages into future guidance, read [author-calibration.md](references/author-calibration.md). Keep project canon and author preferences in project notes, not as universal rules in this reusable Skill.
+
 ## Establish the dramatic function
 
 Before rewriting, identify for each scene:
@@ -111,6 +115,8 @@ After rewriting, read the scene continuously and check:
 8. Do important actions have an intentional sound cue, and are repeated UI or event sounds varied enough to avoid mechanical repetition?
 9. Does static art text belong in the image, while dynamic information remains controllable by the engine?
 10. Did syntax checks and affected branch tests exercise the actual changed menu or screen?
+
+Compare meaning in both directions: what did the revision lose, and what does it newly assert? Protect negation, uncertainty, chronology, promises, quantities, and the difference between private thought and spoken dialogue. Do not evaluate literary quality by an AI-detector score or by how many banned words disappeared.
 
 Report the few decisions that materially changed the scene, with representative before/after examples when useful. Identify any proposed new facts and unresolved art dependencies. Preserve strong passages instead of rewriting everything to demonstrate effort. Report tests only for the paths and behaviors actually exercised; separate engine checks from user acceptance. Do not introduce SHA, screenshot pixel equality, or file-tree integrity checks unless the user explicitly asks for them.
 

@@ -66,6 +66,9 @@ Android 测试构建使用 Ren'Py 8.5.3 对应的 RAPT、JDK 21 与 Android API 
 
 ## 开发复盘与项目 Skill
 
+- [GitHub Skill 借鉴与取舍](docs/SKILL_COMPARISON_APPLIED.md)、[新规则实战复查](docs/SCRIPT_REVIEW_20260905.md)：中文语义保护、人物知情和分支连续性，以及本轮实际测试范围。
+- [村庄路线 Pt.1 开发计划](docs/VILLAGE_ROUTE_PT1_PLAN.md)：先做林路救援到醒来的切片，人物细节待定，尚未实现。
+
 - [Skill 二次审订](docs/SKILL_REVIEW_V022.md)说明编辑判断、事实边界与测试证据范围的修正。
 
 - [v0.2.2 开发实战复盘](docs/DEVELOPMENT_RETROSPECTIVE_V022.md)记录了本轮界面、剧本、美术、声音、测试和 Android 汇编中真正影响后续决策的经验。
