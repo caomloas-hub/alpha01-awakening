@@ -30,10 +30,12 @@ For every external file, record:
 
 - Make ambience loops seamless and avoid sudden noise-floor or stereo-image changes at the seam.
 - Keep dialogue intelligible; reduce competing midrange and use conservative ambience levels.
-- Prepare two or more variants for frequently repeated footsteps, clicks, impacts, and handling sounds.
+- Consider variants for repeated physical actions when repetition is audible. Consistent UI feedback may be preferable; do not require random variation for every click.
 - Use short fades when changing locations. Let shared distant sounds bridge adjacent scenes only when geography and time make that credible.
 - Keep UI sounds dry and consistent. Do not reuse a hover sound as a chapter sting, map marker, notification, and physical-world effect.
 
 ## Integrate and verify
 
 Use separate engine channels for ambience, music, ordinary SFX, and UI when the engine supports them. Verify that each file loads, loops, stops, fades, and respects volume settings. Run syntax and branch checks, then leave final loudness, timbre, and emotional fit to listening-based user acceptance rather than waveform snapshots or hashes.
+
+In text-led games without voice acting, judge fatigue and distraction during reading rather than claiming speech masking. When changing event triggers, check whether advancing, skipping, rollback, or load can repeat or overlap a sound unexpectedly. Only test playback modes affected by the change.

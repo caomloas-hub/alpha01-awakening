@@ -66,6 +66,8 @@ Android 测试构建使用 Ren'Py 8.5.3 对应的 RAPT、JDK 21 与 Android API 
 
 ## 开发复盘与项目 Skill
 
+- [Skill 二次审订](docs/SKILL_REVIEW_V022.md)说明编辑判断、事实边界与测试证据范围的修正。
+
 - [v0.2.2 开发实战复盘](docs/DEVELOPMENT_RETROSPECTIVE_V022.md)记录了本轮界面、剧本、美术、声音、测试和 Android 汇编中真正影响后续决策的经验。
 - [视觉小说剧本调写 Skill](skills/visual-novel-script-editor/SKILL.md)将这些经验整理为可复用规则；涉及美术、UI、声音或 Ren'Py 接入时，再按需读取配套的制作连续性参考。
 

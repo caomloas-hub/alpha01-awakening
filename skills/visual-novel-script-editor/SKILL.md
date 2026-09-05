@@ -9,6 +9,14 @@ Rewrite the script at scene level, not as isolated pretty sentences. Preserve th
 
 When the request includes asset production or implementation, treat text, background/CG, sound, UI, and engine state as one scene. Read [production-integration.md](references/production-integration.md) before changing those systems. Do not rewrite a line in a way that requires art, costume, location, or audio the project does not have without flagging that dependency.
 
+## Establish evidence and edit scope
+
+Use the user's latest accepted direction and current script as the working baseline. Separate established facts, character beliefs, deliberate unknowns, and proposed additions. A compelling interpretation is not automatically canon.
+
+Read the surrounding exchange and relevant branch conditions before diagnosing a line. Choose the smallest effective intervention: retain, trim, rephrase, move, or rewrite the beat. A request to review calls for findings; a request to edit authorizes edits within that scope. Do not silently turn a line polish into a new event or a different character motive.
+
+Before replacing an abstract line with concrete detail, check what the detail asserts. Falling masonry adds danger; a remembered night outside a gate adds biography; a gesture can imply trust the scene has not earned. Prefer established objects and actions, and flag additions that change causality or characterization.
+
 ## Establish the dramatic function
 
 Before rewriting, identify for each scene:
@@ -43,7 +51,7 @@ Prefer physical and situational evidence before emotional explanation:
 - dialogue that circles an exposed feeling instead of naming it immediately;
 - silence when another line would merely explain what the player already understands.
 
-Use literary language sparingly. Start from a concrete object or sensation, then allow at most one strong comparison in an emotional beat. Remove a metaphor if it competes with the action, repeats the same meaning, or makes the viewpoint character sound like the narrator instead of themselves.
+Match literary density to the requested voice and the scene. Keep a metaphor, plain emotional statement, or deliberate repetition when it adds perspective, rhythm, or meaning. Trim competing images and redundant interpretation; do not impose a metaphor quota or turn every feeling into a stock gesture. Directness and restraint are choices, not universal measures of quality.
 
 ## Control narrative distance and rhythm
 
@@ -53,6 +61,8 @@ Let pressure shape sentence length. Under urgent action, shorten syntax and plac
 
 Choose sensory detail according to character attention. A cautious protagonist notices exits and hands; a trader notices quantities and damaged seals; a gate officer notices discrepancies. Do not add scent, weather, texture, and sound all at once merely to make a paragraph seem literary.
 
+These attention patterns are examples, not occupational scripts. Relationships, fatigue, private concerns, and the specific listener can redirect attention. Do not replace shared authorial wit with equally repetitive character mannerisms.
+
 Do not explain an action and then explain the emotion it already conveyed. When a gesture, interruption, or object carries the beat, let the following line advance the scene instead of translating it into an abstract conclusion.
 
 ## Control exposition
@@ -61,9 +71,13 @@ Deliver worldbuilding through a current need: passing a gate, repairing a vehicl
 
 Avoid dialogue whose only purpose is teaching the player. If an explanation is necessary, give the speaker a reason to be impatient, cautious, proud, mistaken, or selective about it.
 
+Check who knows each fact and how they learned it, including optional scenes. Distinguish the player's knowledge from the protagonist's and the speaker's. A technically trained viewpoint may naturally use technical vocabulary; remove terms because they obstruct the present exchange, not because they appear on a blacklist. Preserve intentionally withheld information without making basic actions hard to follow.
+
 ## Preserve interactive consequences
 
 Different choices should leave small textual consequences even when branches reconverge. Reuse a prior action, piece of knowledge, withheld truth, or emotional reaction later in the scene. Do not make every choice produce a new route; make it alter how the same event is experienced.
+
+Only add callbacks supported by the branch history and requested edit scope. A choice may express attitude without earning a reward or a new consequence. Keep the action promised by the option consistent with what follows; avoid silently making a cautious option aggressive or a neutral option romantic.
 
 When editing Ren'Py or another scripted engine:
 
@@ -87,17 +101,17 @@ When sound work is requested, read [audio-direction.md](references/audio-directi
 
 After rewriting, read the scene continuously and check:
 
-1. Could two characters swap lines without sounding wrong? If yes, separate their voices further.
-2. Does every exchange end in a joke, maxim, or polished comeback? Flatten most of them.
+1. Could characters swap distinctive, consequential lines without changing the exchange? Check motive, knowledge, and relationship before adding verbal quirks. Ordinary acknowledgments may sound alike.
+2. Do repeated jokes, maxims, or polished comebacks flatten the emotional range? Retain the ones earned by the speaker and moment.
 3. Does narration explain the emotion after the action already showed it? Keep the stronger version.
 4. Does a character know something only because the player needs exposition? Change the delivery or defer it.
-5. Are several metaphors stacked around one feeling? Keep one concrete image.
+5. Do images compete or repeat meaning? Keep the combination that carries the intended voice and beat, without a numerical quota.
 6. Do reconverged branches remember what the player chose? Add a restrained callback where useful.
 7. Does revised text still match the displayed location, costume, time, viewpoint, and available art?
 8. Do important actions have an intentional sound cue, and are repeated UI or event sounds varied enough to avoid mechanical repetition?
 9. Does static art text belong in the image, while dynamic information remains controllable by the engine?
 10. Did syntax checks and affected branch tests exercise the actual changed menu or screen?
 
-Report meaningful voice, pacing, visual-continuity, sound-direction, UI, and state-handling changes. Do not present unchanged plot structure as a creative rewrite. Separate objective engine checks from subjective user acceptance. Do not introduce SHA, screenshot pixel equality, or file-tree integrity checks unless the user explicitly asks for them.
+Report the few decisions that materially changed the scene, with representative before/after examples when useful. Identify any proposed new facts and unresolved art dependencies. Preserve strong passages instead of rewriting everything to demonstrate effort. Report tests only for the paths and behaviors actually exercised; separate engine checks from user acceptance. Do not introduce SHA, screenshot pixel equality, or file-tree integrity checks unless the user explicitly asks for them.
 
 The narrative-distance, sensory-selection, and prose-rhythm guidance in this Skill is informed by the Apache-2.0 licensed [Creative Writing Craft](https://github.com/haowjy/creative-writing-skills/blob/main/skills/creative-writing-craft/SKILL.md) and [Prose Writing](https://github.com/haowjy/creative-writing-skills/blob/main/skills/creative-writing-craft/resources/prose-writing.md) references. Apply the principles to visual-novel production rather than copying their example prose.

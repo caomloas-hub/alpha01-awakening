@@ -8,7 +8,7 @@ Before editing, list the labels, menu captions, variables, persistent fields, in
 
 ## Build a scene-state sheet
 
-For every affected beat, record:
+Reuse existing notes and record only facts relevant to the change. For an asset replacement or multi-scene revision, the useful fields are:
 
 - location, time, weather, and light;
 - visible characters and their positions;
@@ -35,6 +35,8 @@ For image-backed buttons:
 
 For transparent title art, inspect the alpha fringe on both light and dark backgrounds. Place decorative silhouettes so they support the word shape rather than obscure recognition.
 
+An invisible label does not by itself prove screen-reader support, visible keyboard focus, or that a pointer hotspot matches the pictured button. Check those behaviors separately when in scope. Baking text also creates localization and scaling costs; follow the project's chosen art direction while retaining editable source and exact text specifications.
+
 ## Preserve viewpoint continuity
 
 If the protagonist's complete appearance is intentionally withheld, prefer first-person compositions and reveal only necessary paws, sleeves, maps, tools, or sight-line edges. State exactly which garment is already worn. For furry characters, check tail origin, ear and horn placement, limb anatomy, sleeve openings, tail holes, and how clothing reacts to movement.
@@ -58,7 +60,9 @@ For licensing and asset preparation, read [audio-direction.md](audio-direction.m
 
 Do not assume lint proves menu semantics. A dialogue line at the wrong indentation may still parse while changing the choices presented. Read changed menu blocks and run a route that selects the affected option.
 
-Avoid real-time waits in automated tests. Set the post-wait state directly, then verify the hidden option or delayed response becomes available while leaving production timing unchanged.
+Separate delayed-behavior tests into two claims. A fixture that sets the revealed flag can test the revealed menu and route, but cannot validate the timer, its callback, or the preceding dialogue. To test the trigger, invoke the production callback with a controlled clock or test-only duration where supported, or exercise the actual wait. Verify that it is absent before the trigger, appears after it, and does not fire twice. If only the fixture ran, explicitly leave timer behavior unverified. Do not weaken a failing test merely to obtain a pass.
+
+Initialize each route test from a known state. Isolate test saves and persistent data from the user's playthrough; reset relevant fixtures between cases. Verify changed preconditions and resulting state, not just that an ending label was reached. Saving and loading requires an actual round trip that restores representative state; opening the save page alone proves only navigation. Keep these checks proportional to the change, and build or deploy only platforms included in the current request.
 
 On Windows, Ren'Py GUI executables may not expose terminal output reliably. Redirect stdout and stderr from a separate process when evidence is needed. For Android, verify the exact JDK required by the installed Ren'Py/RAPT version before building; package creation does not replace device-level touch, keyboard, crop, and audio acceptance.
 
