@@ -1,8 +1,8 @@
 define config.name = _("风从旧世来")
 define gui.show_name = True
-define config.version = "0.2.2"
-define build.name = "wind_from_old_world_v022"
-define config.window_title = "风从旧世来 v0.2.2"
+define config.version = "0.2.3"
+define build.name = "wind_from_old_world_v023"
+define config.window_title = "风从旧世来 v0.2.3"
 
 define config.has_sound = True
 define config.has_music = True

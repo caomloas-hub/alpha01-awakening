@@ -1,6 +1,6 @@
 # 风从旧世来
 
-一个 1920×1080 的中文第一人称福瑞视觉小说原型，使用 Ren'Py 8.5.3 制作。当前开发快照为 v0.2.2，包含序章与城镇路线第一章《借名入城》。“ALPHA-01”保留为剧情中的实验编号，“苏醒记录”则是游戏内档案功能名称。
+一个 1920×1080 的中文第一人称福瑞视觉小说原型，使用 Ren'Py 8.5.3 制作。当前开发快照为 v0.2.3，包含序章与城镇路线第一章《借名入城》。“ALPHA-01”保留为剧情中的实验编号，“苏醒记录”则是游戏内档案功能名称。
 
 ![灰桥城首次入城](game/images/town_route/cg/cg-town-first-city-view-v2.png)
 
@@ -44,6 +44,10 @@
 3. 开发检查可依次运行 `lint` 与 `compile`。构建产物不会提交到仓库。
 
 ## Android 测试版
+
+v0.2.3 接入最新晴空动态菜单、统一社交图标与约稿角色应用图标。APK 发布于 [Android v0.2.3 测试版](https://github.com/caomloas-hub/alpha01-awakening/releases/tag/android-test-v0.2.3)，供用户自行安装；本轮不进行 ADB 部署或安卓实机验收。
+
+应用图标属于用户提供的约稿作品，用户声明拥有非商业使用权，本项目仅按该范围用于免费测试版。**它不是 AI 生成素材，也不随代码获得开源许可；不授权第三方提取、转载、再许可或商用。** 详见 [图标授权说明](docs/COMMISSIONED_ICON_NOTICE.md)。
 
 Android 测试构建使用 Ren'Py 8.5.3 对应的 RAPT、JDK 21 与 Android API 36，包名为 `com.caomloas.alpha01awakening`，采用横屏显示且不启用商店内购。构建环境、真机部署和签名注意事项见 [Android 测试构建说明](docs/ANDROID_TEST_BUILD.md)。APK 作为测试发行附件提供，不把签名密钥或本机 SDK 路径提交到仓库。
 
