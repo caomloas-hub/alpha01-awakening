@@ -130,6 +130,18 @@ screen sky_picture_button(label, index, action, width=160, height=86):
         # Preserve existing text-targeted automation without drawing a second label.
         text label size 1 color "#ffffff00"
 
+screen sky_social_icon(label, index, action):
+    button:
+        style "sky_button"
+        xysize (88,88)
+        action action
+        alt label
+        tooltip label
+        add Transform(Crop((index*724,0,724,724), SKY_ROOT + "social-icons-v1.png"), xysize=(80,80), nearest=True):
+            align (.5,.5)
+            at (sky_static if persistent.sky_menu_reduced_motion else sky_button_motion)
+        text label size 1 color "#ffffff00"
+
 screen main_menu():
     tag menu
     default ready = sky_menu_seen or persistent.sky_menu_reduced_motion
@@ -180,11 +192,21 @@ screen main_menu():
         hbox:
             xalign 1.0
             xoffset -40
-            ypos 965
-            spacing 12
-            textbutton "X" style "sky_social" action OpenURL("https://x.com/Furry_Xunyi") tooltip "X / @Furry_Xunyi"
-            textbutton "抖音" style "sky_social" action OpenURL("https://v.douyin.com/afT-TbA2v3c/")
-            use sky_picture_button("制作组（施工中）",5,NullAction(),145,70)
+            ypos 955
+            spacing 16
+            use sky_social_icon("X / @Furry_Xunyi",0,OpenURL("https://x.com/Furry_Xunyi"))
+            use sky_social_icon("抖音",1,OpenURL("https://v.douyin.com/afT-TbA2v3c/"))
+            use sky_social_icon("制作组（施工中）",2,NullAction())
+
+        $ social_tip = GetTooltip()
+        if social_tip in ("X / @Furry_Xunyi", "抖音", "制作组（施工中）"):
+            frame:
+                xalign 1.0
+                xoffset -40
+                ypos 898
+                background Solid("#123b46ee")
+                padding (16,10)
+                text social_tip size 24 color "#fff1cb"
 
         textbutton ("动效：关" if quiet else "动效：开"):
             style "sky_motion_option"

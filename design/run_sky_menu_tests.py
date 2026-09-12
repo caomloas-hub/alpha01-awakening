@@ -7,7 +7,7 @@ import time
 
 root = pathlib.Path(__file__).resolve().parents[1]
 sdk = root.parents[1] / 'work/renpy-sdk/renpy-8.5.3-sdk/renpy.exe'
-names = sys.argv[1:] or ['sky_menu_intro', 'sky_menu_skip', 'sky_menu_save_restore', 'sky_menu_navigation', 'sky_menu_keyboard']
+names = sys.argv[1:] or ['sky_menu_intro', 'sky_menu_skip', 'sky_menu_save_restore', 'sky_menu_navigation', 'sky_menu_keyboard', 'sky_menu_social']
 for name in names:
     stamp = str(time.time_ns())
     saves = root.parents[1] / 'work' / ('sky-qa-' + name + '-' + stamp)

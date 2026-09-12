@@ -80,6 +80,29 @@ testcase sky_menu_save_restore:
     $ assert store.court_response == "argue" and store.resolve == 1
     $ assert renpy.get_screen("choice")
 
+testcase sky_menu_social:
+    $ _test.timeout = 20.0
+    pause 3.0
+    screenshot "sky-menu-social-idle.png"
+    move pos (1628,999)
+    pause .3
+    $ assert GetTooltip() == "X / @Furry_Xunyi"
+    screenshot "sky-menu-social-hover.png"
+    $ renpy.queue_event("focus_right")
+    pause .3
+    $ assert GetTooltip() == "抖音", repr(GetTooltip())
+    $ renpy.queue_event("focus_right")
+    pause .3
+    $ assert GetTooltip() == "制作组（施工中）"
+    $ renpy.queue_event("button_select")
+    $ assert renpy.get_screen("main_menu")
+    click "动效：开"
+    move pos (1836,999)
+    pause .3
+    $ assert persistent.sky_menu_reduced_motion
+    $ assert GetTooltip() == "制作组（施工中）"
+    screenshot "sky-menu-social-reduced.png"
+
 testcase sky_menu_keyboard:
     $ _test.timeout = 20.0
     pause .15
