@@ -522,7 +522,7 @@ transform main_social_button_motion:
         easeout 0.14 yoffset -9
 
 
-screen main_menu():
+screen main_menu_legacy():
 
     ## This ensures that any other menu screen is replaced.
     tag menu

@@ -6,6 +6,10 @@
 
 ## 当前内容
 
+主分支现采用晴空遗迹动态主菜单：居中像素标题、小龙飞落“旧”字、水面倒影及轻量按钮；支持跳过入场与关闭动效。旧菜单完整版本保留在 [`codex/legacy-menu`](https://github.com/caomloas-hub/alpha01-awakening/tree/codex/legacy-menu) 分支，作为独立开发方向。
+
+本轮 Windows 菜单五项回归、lint 与 compile 已通过；未同步构建 Android APK。实现与测试说明见 [晴空菜单说明](design/sky-menu-v1.md)。
+
 - 木质中国法庭的近景开场，支持“抗辩 / 沉默”两种不改变判决、但改变人物状态的回应。
 - ALPHA 原型体实验与两千年文明演进转场。
 - 地震、未知授权和最终预案触发的强制唤醒。

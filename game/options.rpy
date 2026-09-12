@@ -35,6 +35,8 @@ init python:
     build.classify("dist/**", None)
     build.classify("game/testcases.rpy", None)
     build.classify("game/testcases.rpyc", None)
+    build.classify("game/sky_menu_tests.rpy", None)
+    build.classify("game/sky_menu_tests.rpyc", None)
     build.classify("log.txt", None)
     build.classify("test-*.txt", None)
     build.classify("test-*.log", None)
